@@ -18,6 +18,13 @@ To build and run, first install esy with
 npm install -g esy
 ```
 
+Then, install your system's development package for libuv 1.x. On Ubuntu, this
+is done with
+
+```
+sudo apt install libuv1-dev
+```
+
 Then do
 
 ```
@@ -30,6 +37,16 @@ esy jbuilder exec ./main.exe
 
 This may take a little while to build all the OCaml deps, but then you should
 see `Hello, world!`.
+
+If you see an error message about missing `makeinfo` from the libffi part of
+the build, you can install it with
+
+```
+sudo apt install texinfo
+```
+
+on Ubuntu, and similar commands on other systems. We will remove the libffi
+dependency in the future. We also plan to vendor libuv.
 
 
 
